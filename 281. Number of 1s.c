@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main(){
+    int input;
+    while(scanf("%d", &input) != EOF){
+        int count = 0;
+        for(int i=0; i<sizeof(int)*8; i++){
+            if(input>>i & 1)count++;
+        }
+        printf("%d\n", count);
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "gcc.exe build active file",
+            "command": "C:\\Program Files (x86)\\CodeBlocks\\MinGW\\bin\\gcc.exe",
+            "args": [
+                "${fileDirname}\\${fileBasenameNoExtension}.c",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe",
+                "-std=c99",
+                "-O2"
+            ],
+            "options": {
+                "cwd": "C:\\Program Files (x86)\\CodeBlocks\\MinGW\\bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "gcc.exe execute active file",
+            "command": "${fileDirname}\\${fileBasenameNoExtension}.exe"
+        },
+        {
+            "label": "t",
+            "dependsOrder": "sequence",
+            "dependsOn": [
+                "gcc.exe build active file",
+                "gcc.exe execute active file"
+            ],
+            "problemMatcher": []
+        }
+    ]
+}
